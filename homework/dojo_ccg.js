@@ -30,7 +30,6 @@ class Effect extends Card{
         } else {
             throw new Error("Target must be a Unit");
         }
-        console.log(this.stat);
         console.log(target.name, target[this.stat]);
     }
 }
