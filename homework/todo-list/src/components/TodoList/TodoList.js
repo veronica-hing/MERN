@@ -4,7 +4,7 @@ export const TodoList = (props) => {
     return(
         <div>
             {todos.map((todo, i) =>{
-                return <TodoItem key = {i} todo = {todo.todo} completed = {todo.completed}/>
+                return <TodoItem key = {i} id = {i} todo = {todo.todo} completed = {todo.completed} handleDelete = {props.handleDelete} handleChecked = {props.handleChecked}/>
             })}
         </div>
     );

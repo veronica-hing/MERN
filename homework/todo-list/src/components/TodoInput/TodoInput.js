@@ -7,6 +7,7 @@ export const TodoInput = (props) => {
     const createTodo = (e) => {
         e.preventDefault();
         props.addTodo(todo);
+        setTodo("");
     };
 
     return(

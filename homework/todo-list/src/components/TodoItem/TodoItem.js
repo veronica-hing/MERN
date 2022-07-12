@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
 
 export const TodoItem = (props) => {
+    let styles;
+    props.completed ? styles = "strike-through" : styles = "";
     return(
         <div>
-            <h2>{props.todo}</h2>
-            <h3>Completed: {props.completed.toString()}</h3>
+            <p className={styles}>
+                <input type = "checkbox" checked = {props.completed} onChange = {()=> {props.handleChecked(props.id)}}></input>
+                {props.todo}
+                <button onClick = {() => {props.handleDelete(props.id)}}>Delete</button>
+            </p>
         </div>
     );
 };
