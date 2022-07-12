@@ -43,12 +43,15 @@ function orderedIntersection(sortedA, sortedB) {
             //increment our indexes to continue while loop
             i++;
             k++;
-        }else if(sortedA[i]< sortedB[k]){
+        }
+        //increment the smaller value so it can be compared again in the next while iteration.
+        else if(sortedA[i]< sortedB[k]){
             i++;
         }else{
             k++;
         }
     }
+    //convert our overlap set to an array
     const intersection = Array.from(overlap);
     return intersection;
 }
