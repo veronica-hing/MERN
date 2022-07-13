@@ -1,4 +1,5 @@
-import { TodoItem } from "../TodoItem/TodoItem";
+import { TodoItem } from "./TodoItem";
+
 export const TodoList = (props) => {
     const {todos} = props;
     return(
