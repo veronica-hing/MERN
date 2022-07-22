@@ -15,21 +15,30 @@ const AllAuthors = (props) =>{
     }
 
     return (
-        <div className="App">
-            <h3>Authors</h3>
+        <div className="col-5 mx-auto">
+            <thead>
+                <tr>
+                    <th>Authors</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
             {
                 alphabetic.map((item)=>{
                     return(
-                        <div className='card mb-3' key = {item._id}>
-                            <h2>{item.name}</h2>
-                            <button onClick = {e=>deleteAuthor(item._id)}>Delete</button>
-                            <Link to={"/authors/" + item._id + "/edit"}>
-                                Edit
-                            </Link>
-                        </div>
+                        <tr key = {item._id}>
+                            <td>{item.name}</td>
+                            <td>
+                                <button className = "btn btn-danger m-1 " onClick = {e=>deleteAuthor(item._id)}>Delete</button>
+                                <Link className = "btn btn-primary m-1"to={"/authors/" + item._id + "/edit"}>
+                                    Edit
+                                </Link>
+                            </td>
+                        </tr>
                     )
                 })
             }
+            </tbody>
         </div>
     );
 };

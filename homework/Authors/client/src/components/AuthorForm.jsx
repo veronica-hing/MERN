@@ -34,8 +34,7 @@ const AuthorForm = (props) => {
     }
 
     return (
-        <div>
-            <h3>Example</h3>
+        <div className = "col-4 mx-auto">
             <form onSubmit={submitHandler}>
                 <div className="form-group">
                     <label htmlFor="">Name:</label>
@@ -43,7 +42,7 @@ const AuthorForm = (props) => {
                     <p className="text-danger">{formErrors.name?.message}</p>
                 </div>
 
-                <button type = "submit">Add Author</button>
+                <button className = "btn btn-success" type = "submit">Add Author</button>
             </form>
         </div>
     );

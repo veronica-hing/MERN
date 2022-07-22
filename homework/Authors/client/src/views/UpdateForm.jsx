@@ -48,9 +48,11 @@ const UpdateForm = (props) => {
                     onChange={(e) => { setName(e.target.value) }}/>
                 </p>
                 <p className="text-danger">{formErrors.name?.message}</p>
-                <button type="submit">Submit Changes</button>
+                <div>
+                    <button className = "btn btn-success m-1" type="submit">Submit Changes</button>
+                    <button className = "btn btn-primary m-1" onClick = {goHome}>Cancel</button>
+                </div>
             </form>
-                <button onClick = {goHome}>Cancel</button>
         </div>
     )
 }
