@@ -11,7 +11,7 @@ const UpdateForm = (props) => {
         axios.get('http://localhost:8000/api/authors/' + id)
             .then(res => {
                 //console.log(res.data.results.name); sometimes it be wonky
-                setName(res.data.results.name);
+                setName(res.data.name);
             })
     }, []);
     

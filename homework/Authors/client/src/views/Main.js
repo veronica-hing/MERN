@@ -10,7 +10,7 @@ function Main(){
     useEffect(() =>{
         axios.get('http://localhost:8000/api/authors')
             .then(res =>{
-                setAuthors(res.data.results);
+                setAuthors(res.data);
                 setLoaded(true);
             })
             .catch(err => console.error(err));
@@ -22,7 +22,7 @@ function Main(){
     const refreshList = () => {
         axios.get('http://localhost:8000/api/authors')
             .then(res =>{
-                setAuthors(res.data.results);
+                setAuthors(res.data);
                 setLoaded(true);
             })
             .catch(err => console.error(err));

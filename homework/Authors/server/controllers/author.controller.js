@@ -3,7 +3,7 @@ const Author = require('../models/author.model');
 module.exports.findAllAuthors = (req, res) =>{
     Author.find()
     .then(allAuthors =>{
-        res.json({results: allAuthors})
+        res.json(allAuthors)
     })
     .catch(err=>{
         res.json(err)
@@ -12,7 +12,7 @@ module.exports.findAllAuthors = (req, res) =>{
 module.exports.createNewAuthor = (req, res) =>{
     Author.create(req.body)
     .then(newlyCreatedAuthor =>{
-        res.json({results: newlyCreatedAuthor})
+        res.json(newlyCreatedAuthor)
     })
     .catch(err=>{
         res.json(err)
@@ -21,7 +21,7 @@ module.exports.createNewAuthor = (req, res) =>{
 module.exports.findOneAuthor = (req, res) =>{
     Author.findOne({_id: req.params.id})
     .then( author =>{
-        res.json({results: author})
+        res.json(author)
     })
     .catch(err=>{
         res.json(err)
@@ -34,7 +34,7 @@ module.exports.updateOneAuthor = (req, res) =>{
         {new: true, runValidators: true}
     )
     .then(updatedAuthor =>{
-        res.json({results: updatedAuthor})
+        res.json(updatedAuthor)
     })
     .catch(err=>{
         res.json(err)
@@ -43,7 +43,7 @@ module.exports.updateOneAuthor = (req, res) =>{
 module.exports.deleteAuthor = (req, res) =>{
     Author.deleteOne({_id: req.params.id})
     .then(author =>{
-        res.json({results: author})
+        res.json(author)
     })
     .catch(err=>{
         res.json(err)
