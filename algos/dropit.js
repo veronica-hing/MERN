@@ -34,15 +34,13 @@ const expected3 = [];
  */
 function dropIt(arr, cb) {
     //this will be the array we return
-    let result = [];
 
     for(let key in arr){
         if(cb(arr[key])){
-            result = arr.slice(key);
-            return result;
+            return arr.slice(key);
         }
     }
-    return result;
+    return arr.slice(arr.length);
 }
 console.log(dropIt(nums1,callback1));
 console.log(dropIt(nums2,callback2));
