@@ -15,7 +15,7 @@ const expected1 = [6, 9, 15];
 
 const nums2 = [...nums1];
 const callback2 = (elem) => {
-  return elem > 2;
+    return elem > 2;
 };
 const expected2 = [4, 3, 6, 9, 15];
 
@@ -33,17 +33,16 @@ const expected3 = [];
  * @returns {Array<any>} The given array with only the remaining items.
  */
 function dropIt(arr, cb) {
+    //this will be the array we return
+    let result = [];
+
     for(let key in arr){
         if(cb(arr[key])){
-            //remove the key still
-            arr = arr.slice(1);
-            return arr;
-        }
-        else{
-            arr = arr.slice(1);
+            result = arr.slice(key);
+            return result;
         }
     }
-    return arr;
+    return result;
 }
 console.log(dropIt(nums1,callback1));
 console.log(dropIt(nums2,callback2));
