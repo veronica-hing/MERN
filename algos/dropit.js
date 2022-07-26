@@ -33,14 +33,14 @@ const expected3 = [];
  * @returns {Array<any>} The given array with only the remaining items.
  */
 function dropIt(arr, cb) {
-    //this will be the array we return
 
     for(let key in arr){
         if(cb(arr[key])){
-            return arr.slice(key);
+            return arr.splice(key);
         }
     }
-    return arr.slice(arr.length);
+    arr = arr.splice(arr.length);
+    return arr;
 }
 console.log(dropIt(nums1,callback1));
 console.log(dropIt(nums2,callback2));
